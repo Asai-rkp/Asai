@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Student_Management_App_1.ViewModels"
+             x:Class="Student_Management_App_1.Views.StudentMarkPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:StudentViewModel/>
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Students}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Margin="10" Padding="10">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                        <Label Text="{Binding Tamil, StringFormat='Tamil: {0}'}"/>
+                        <Label Text="{Binding English, StringFormat='English: {0}'}"/>
+                        <Label Text="{Binding Maths, StringFormat='Maths: {0}'}"/>
+                        <Label Text="{Binding Total, StringFormat='Total: {0}'}" TextColor="Green"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
